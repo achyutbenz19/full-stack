@@ -48,8 +48,18 @@ def get_user(id):
 
 @app.route("/users/<id>", methods = ['DELETE'])
 def delete_user(id):
-    user = db.delete_one({'_id': ObjectId(id)})
-    return jsonify({'msg': 'User deleted'})
+    db.delete_one({'_id': ObjectId(id)})
+    return jsonify({'msg': 'User deleted.'})
+
+@app.route("/users/<id>", methods = ['PUT'])
+def update_user(id):
+    db.update_one({'_id': ObjectId(id)}, {'$set': {
+        'name': request.json['name'],
+        'email': request.json['email'],
+        'phone': request.json['phone'],
+        'address': request.json['address']    
+    }})
+    return jsonify({'msg': 'User updated.'})
     
 if __name__ == "__main__":
     app.run(debug=True)
