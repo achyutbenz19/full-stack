@@ -35,5 +35,16 @@ def get_users():
         })
     return jsonify(users)
 
+@app.route("/user/<id>", methods = ['GET'])
+def get_user(id):
+    user = db.find_one({'_id': ObjectId(id)})
+    return jsonify({
+        '_id': str(ObjectId(user['_id'])),
+        'name': user['name'],
+        'email': user['email'],
+        'phone': user['phone'],
+        'address': user['address']
+    })
+
 if __name__ == "__main__":
     app.run(debug=True)
