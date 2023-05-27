@@ -35,7 +35,7 @@ def get_users():
         })
     return jsonify(users)
 
-@app.route("/user/<id>", methods = ['GET'])
+@app.route("/users/<id>", methods = ['GET'])
 def get_user(id):
     user = db.find_one({'_id': ObjectId(id)})
     return jsonify({
