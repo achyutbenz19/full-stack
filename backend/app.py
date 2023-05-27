@@ -46,5 +46,10 @@ def get_user(id):
         'address': user['address']
     })
 
+@app.route("/users/<id>", methods = ['DELETE'])
+def delete_user(id):
+    user = db.delete_one({'_id': ObjectId(id)})
+    return jsonify({'msg': 'User deleted'})
+    
 if __name__ == "__main__":
     app.run(debug=True)
