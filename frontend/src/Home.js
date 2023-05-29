@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import {Navbar, Table, Container, Row, Col, Button, ButtonGroup, Form} from "react-bootstrap";
 
 const Home = () => {
   return (
-    <div>Home Page</div>
+    <Navbar bg = "primary" variant = "dark" className = "justify-content-center">
+        <Navbar.Brand>Python Flask MongoDB Redux App</Navbar.Brand>
+    </Navbar>
   )
 }
 
