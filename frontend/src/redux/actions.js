@@ -10,6 +10,9 @@ const getUser = () => ({
 
 export const loadUsers = () => {
     return function(dispatch) {
-    axois.get('${API}/users').then((resp) => dispatch(getUser(resp.data))).catch(err => console.log(err))
+        axois
+        .get('${API}/users')
+        .then((resp) => dispatch(getUser(resp.data)))
+        .catch(err => console.log(err));
     }
 }
