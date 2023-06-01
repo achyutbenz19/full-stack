@@ -21,7 +21,6 @@ function App() {
     <div className="App">
       <h1>Flask MonogoDB</h1>
       <DataList datas = {datas}/>
-
     </div>
   );
 }
