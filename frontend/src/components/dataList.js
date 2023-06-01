@@ -12,7 +12,7 @@ function DataList(props) {
             <h3>{data.email}</h3>
 
             <div className='row'>
-                <div className='col-mid-1'>
+                <div className='col'>
                     <button className='btn btn-primary'>Update</button>
                 </div>
 
