@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import DataList from "./components/dataList";
 
 function App() {
 
@@ -19,17 +20,8 @@ function App() {
   return (
     <div className="App">
       <h1>Flask MonogoDB</h1>
+      <DataList datas = {datas}/>
 
-      {datas.map(data => {
-        return (
-          <div key = {data._id}>
-            <h2>{data.name}</h2>
-            <h3>{data.phone}</h3>
-            <h3>{data.address}</h3>
-            <h3>{data.email}</h3>
-          </div>
-        )
-      })}
     </div>
   );
 }
