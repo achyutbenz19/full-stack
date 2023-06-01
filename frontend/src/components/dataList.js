@@ -10,6 +10,18 @@ function DataList(props) {
             <h3>{data.phone}</h3>
             <h3>{data.address}</h3>
             <h3>{data.email}</h3>
+
+            <div className='row'>
+                <div className='col-mid-1'>
+                    <button className='btn btn-primary'>Update</button>
+                </div>
+
+                <div className='col'>
+                    <button className='btn btn-danger'>Delete</button>
+                </div>
+
+            </div>    
+
           </div>
         )
       })}
