@@ -1,6 +1,11 @@
 import React from 'react'
 
 function DataList(props) {
+
+  const editData = (data) => {
+    props.editData(data)
+  }
+
   return (
     <div>
       {props.datas && props.datas.map(data => {
@@ -13,7 +18,8 @@ function DataList(props) {
 
             <div className='row'>
                 <div className='col'>
-                    <button className='btn btn-primary'>Update</button>
+                    <button className='btn btn-primary'
+                    onClick={() => editData(data)}>Update</button>
                 </div>
 
                 <div className='col'>
