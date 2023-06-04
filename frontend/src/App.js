@@ -5,7 +5,7 @@ import Form from "./components/Form";
 function App() {
 
   const [datas, setDatas] = useState([])
-  const [editedData, setEditedData] = useState([])
+  const [editedData, setEditedData] = useState(null)
 
   useEffect(() => {
     fetch("http://127.0.0.1:5000/users", {
