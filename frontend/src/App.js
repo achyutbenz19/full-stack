@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DataList from "./components/dataList";
+import Form from "./components/Form";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
     <div className="App">
       <h1>Flask MonogoDB</h1>
       <DataList datas = {datas} editData = { editData }/>
+      <Form data = {editedData}/>
     </div>
   );
 }
