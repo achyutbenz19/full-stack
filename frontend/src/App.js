@@ -7,6 +7,17 @@ function App() {
   const [datas, setDatas] = useState([])
   const [editedData, setEditedData] = useState(null)
 
+  const updatedData = (data) => {
+    const new_data = datas.map(my_data => {
+      if (my_data._id === data._id) {
+        return data
+      } else {
+        return my_data
+      }
+    })
+    setDatas(new_data)
+  }
+
   useEffect(() => {
     fetch("http://127.0.0.1:5000/users", {
       "method": "GET",
@@ -27,7 +38,7 @@ function App() {
     <div className="App">
       <h1>Flask MonogoDB</h1>
       <DataList datas = {datas} editData = { editData }/>
-      {editedData ? < Form data = {editedData}/>: null}
+      {editedData ? < Form data = {editedData} updatedData = {updatedData}/>: null}
     </div>
   );
 }
