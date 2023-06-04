@@ -4,8 +4,9 @@ function Form(props) {
   return (
     <div>
         {props.data && props.data.name}
+
     </div>
   )
 }
 
-export default FormData
+export default Form;
