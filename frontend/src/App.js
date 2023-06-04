@@ -4,6 +4,7 @@ import DataList from "./components/dataList";
 function App() {
 
   const [datas, setDatas] = useState([])
+  const [editedData, setEditedData] = useState([])
 
   useEffect(() => {
     fetch("http://127.0.0.1:5000/users", {
@@ -17,10 +18,14 @@ function App() {
     .catch(err => console.log(err))
   }, [])
 
+  const editData = (data) => {
+    setEditedData(data)
+  }
+
   return (
     <div className="App">
       <h1>Flask MonogoDB</h1>
-      <DataList datas = {datas}/>
+      <DataList datas = {datas} editData = { editData }/>
     </div>
   );
 }
