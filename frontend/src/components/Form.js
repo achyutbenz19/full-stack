@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Form() {
+function Form(props) {
   return (
-    <div>Form</div>
+    <div>
+        {props.data && props.data.name}
+        
+    </div>
   )
 }
 
