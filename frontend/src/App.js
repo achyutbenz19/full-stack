@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <h1>Flask MonogoDB</h1>
       <DataList datas = {datas} editData = { editData }/>
-      <Form data = {editedData}/>
+      {editedData ? < Form data = {editedData}/>: null}
     </div>
   );
 }
