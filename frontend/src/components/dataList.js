@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import APIService from './APIService';
 
 function DataList(props) {
 
   const editData = (data) => {
     props.editData(data)
+  }
+
+  const deleteData = (data) => {
+    APIService.DeleteData(data._id)
+    .then(() => props.deleteData(data))
   }
 
   return (
@@ -23,7 +29,8 @@ function DataList(props) {
                 </div>
 
                 <div className='col'>
-                    <button className='btn btn-danger'>Delete</button>
+                    <button className='btn btn-danger'
+                    onClick={() => deleteData(data)}>Delete</button>
                 </div>
 
             </div>   

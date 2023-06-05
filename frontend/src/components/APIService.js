@@ -20,4 +20,12 @@ export default class APIService{
   })
   .then(resp => resp.json())
   }
+  static DeleteData(_id) {
+    return fetch(`http://127.0.0.1:5000/users/${_id}`, {
+        "method": "DELETE",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+  })
+  }
 }

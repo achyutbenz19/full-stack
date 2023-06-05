@@ -48,6 +48,16 @@ function App() {
     })
   }
 
+  const deleteData = (data) => {
+    const new_datas = datas.filter(mydata => {
+      if (mydata._id === data._id) {
+        return false;
+      }
+      return true;
+    }) 
+    setDatas(new_datas)
+  }
+
   return (
     <div className="App">
       <div className="row">
@@ -58,7 +68,7 @@ function App() {
           <button className="btn btn-success" onClick={openForm}>Insert Datas</button>
         </div>
       </div>
-      <DataList datas = {datas} editData = { editData }/>
+      <DataList datas = {datas} editData = {editData} deleteData = {deleteData}/>
       {editedData ? < Form data = {editedData} updatedData = {updatedData} insertedData = {insertedData}/>: null}
     </div>
   );
