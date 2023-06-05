@@ -15,9 +15,15 @@ function Form(props) {
         setAddress(props.data.address)
     },[props.data])
 
-    const updateData = () =>{
+    const updateData = () => {
         APIService.UpdateArticle(props.data._id, {name, email, phone, address})
         .then(resp => props.updatedData(resp))
+        .catch(err => console.log(err))
+    }
+
+    const insertData = () => {
+        APIService.InsertData({name, email, phone, address})
+        .then(resp => console.log(resp))
         .catch(err => console.log(err))
     }
 
@@ -36,8 +42,11 @@ function Form(props) {
 
                     <label htmlFor = "address" className = "form-label">Address</label>
                     <input type='text' className='form-control' placeholder='Please enter name' value = {address} onChange={(e) => setAddress(e.target.value)}/>
+                
+                    {
+                        props.data._id ? <button onClick={updateData} className='btn btn-sucess mt-3'>Update</button>
+                    : <button onClick={insertData} className='btn btn-sucess mt-3'>Insert</button> }
 
-                    <button onClick={updateData} className='btn btn-sucess mt-3'>Update</button>
                 </div>
                 
             ): null}        

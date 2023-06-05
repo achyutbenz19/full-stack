@@ -34,9 +34,25 @@ function App() {
     setEditedData(data)
   }
 
+  const openForm = () => {
+    setEditedData({
+      name:'',
+      phone:'',
+      email:'',
+      address:''
+    })
+  }
+
   return (
     <div className="App">
-      <h1>Flask MonogoDB</h1>
+      <div className="row">
+        <div className="col">
+          <h1>Flask MonogoDB</h1>
+        </div>
+        <div className="col">
+          <button className="btn btn-success" onClick={openForm}>Insert Datas</button>
+        </div>
+      </div>
       <DataList datas = {datas} editData = { editData }/>
       {editedData ? < Form data = {editedData} updatedData = {updatedData}/>: null}
     </div>
