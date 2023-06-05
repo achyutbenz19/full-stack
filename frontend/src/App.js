@@ -59,7 +59,7 @@ function App() {
         </div>
       </div>
       <DataList datas = {datas} editData = { editData }/>
-      {editedData ? < Form data = {editedData} updatedData = {updatedData}/>: null}
+      {editedData ? < Form data = {editedData} updatedData = {updatedData} insertedData = {insertedData}/>: null}
     </div>
   );
 }
