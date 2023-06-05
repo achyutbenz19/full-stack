@@ -18,6 +18,11 @@ function App() {
     setDatas(new_data)
   }
 
+  const insertedData = (data) => {
+    const new_datas = [...datas, data]
+    setDatas(new_datas)
+  }
+
   useEffect(() => {
     fetch("http://127.0.0.1:5000/users", {
       "method": "GET",

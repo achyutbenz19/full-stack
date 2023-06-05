@@ -23,7 +23,7 @@ function Form(props) {
 
     const insertData = () => {
         APIService.InsertData({name, email, phone, address})
-        .then(resp => console.log(resp))
+        .then(resp => props.insertedData(resp))
         .catch(err => console.log(err))
     }
 
